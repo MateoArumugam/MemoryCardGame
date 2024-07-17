@@ -74,9 +74,9 @@ main {
 }
 
 .memory-card {
+  position: relative;
   width: 100%;
   padding-top: 100%;
-  position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s;
   perspective: 1000px;
@@ -99,7 +99,6 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 20px;
   border-radius: 5px;
   backface-visibility: hidden;
 }
