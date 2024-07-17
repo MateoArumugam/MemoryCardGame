@@ -106,7 +106,7 @@ main {
 
 .front-face {
   transform: rotateY(180deg);
-  background-color: deeppink;
+   background-color: rgb(255, 44, 157);
 }
 
 .back-face {
