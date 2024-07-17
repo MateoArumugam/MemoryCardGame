@@ -6,6 +6,7 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -16,7 +17,7 @@ body {
 }
 
 header {
-  position: relative; /* Ensure relative positioning for absolute positioning inside */
+  position: relative;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -29,22 +30,22 @@ header {
   margin: 20px 0;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  position: relative; /* Ensure relative positioning for z-index to work */
-  z-index: 1; /* Ensure title is above the transparent box */
+  position: relative;
+  z-index: 1;
 }
 
 .title::after {
-  content: ''; /* Create the pseudo-element */
+  content: '';
   position: absolute;
   top: 1%;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  max-width: 2000px; /* Adjust width as needed */
-  height: 100%; /* Adjust height as needed */
-  background-color: rgba(0, 0, 0, 0.734); /* Transparent white */
-  border-radius: 10px; /* Rounded corners */
-  z-index: -1; /* Ensure the box is behind the title */
+  max-width: 2000px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.734);
+  border-radius: 10px;
+  z-index: -1;
 }
 
 main {
@@ -58,22 +59,23 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
-  max-width: 1200px;
-  margin-top: 50px;
+  width: 90%;
+  max-width: 800px;
+  margin-top: 20px;
 }
 
 .memory-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 10px;
   width: 100%;
-  max-width: 800px;
+  aspect-ratio: 4 / 3;
 }
 
 .memory-card {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 0;
   padding-top: 100%;
   position: relative;
   transform-style: preserve-3d;
@@ -81,7 +83,6 @@ main {
   perspective: 1000px;
   cursor: pointer;
 }
-
 
 .memory-card:active {
   transform: scale(0.97);
@@ -106,7 +107,7 @@ main {
 
 .front-face {
   transform: rotateY(180deg);
-   background-color: rgb(255, 44, 157);
+  background-color: rgb(255, 44, 157);
 }
 
 .back-face {
@@ -127,7 +128,7 @@ main {
 
 .playAgainButton:hover {
   background-color: rgb(15, 213, 253);
-  transform: scale(1.05); /* Scale up slightly on hover */
+  transform: scale(1.05);
 }
 
 .popup {
@@ -136,11 +137,11 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-  display: none; /* Initially hidden */
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it's above other content */
+  z-index: 1000;
 }
 
 .popup-content {
@@ -148,11 +149,11 @@ main {
   color: white;
   padding: 20px;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.9); /* Slightly more opaque background for content */
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .popup.show {
-  display: flex; /* Show the popup when .show is added */
+  display: flex;
 }
 
 img {
