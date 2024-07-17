@@ -72,7 +72,8 @@ main {
 }
 
 .memory-card {
-  width: 100%;
+  width: 80%;
+  height: 80%;
   padding-top: 100%;
   position: relative;
   transform-style: preserve-3d;
@@ -80,6 +81,7 @@ main {
   perspective: 1000px;
   cursor: pointer;
 }
+
 
 .memory-card:active {
   transform: scale(0.97);
